@@ -4,16 +4,19 @@ import { typedObjectKeys } from './helpers';
 
 // Got these from https://fonts.google.com/analytics with this script:
 // console.log(
-//   Array.from(document.querySelectorAll("gf-stat-row"))
+//   Array.from(document.querySelectorAll('gf-stat-row'))
 //     .map((row) => {
-//       const linkElement = row.querySelector("a");
+//       const linkElement = row.querySelector('a');
 //       return linkElement ? linkElement.textContent.trim() : null;
 //     })
 //     .filter(Boolean)
 //     .slice(0, 100)
 //     .sort((a, b) => a.localeCompare(b))
-//     .map((f) => `${f.replaceAll(" ", "")}: () => import('@remotion/google-fonts/${f.replaceAll(" ", "")}'),`)
-//     .join("\n")
+//     .map(
+//       (f) =>
+//         `${f.replaceAll(' ', '')}: () => import('@remotion/google-fonts/${f.replaceAll(' ', '')}'),`
+//     )
+//     .join('\n')
 // );
 
 export const FONT_FAMILIES = {

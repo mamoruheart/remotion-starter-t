@@ -7,3 +7,6 @@ dist
 out
 build
 examples/
+
+# custom config
+public/examples/*.mp4
