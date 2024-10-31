@@ -17,6 +17,7 @@ export const RealEstateBackground = defineBackground({
   }),
   component: ({ background, stroke }) => {
     const props = { bgColor: colorVar(background), strokeColor: colorVar(stroke) };
+
     return (
       <AbsoluteFill
         style={{
@@ -44,6 +45,7 @@ const Element1 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 
   const dashArray = interpolate(progress, [0, 0.4, 1], [20, 160, 320]);
   const dashOffset = interpolate(progress, [0, 1], [0, 1200 * 2]);
+
   return (
     <div
       style={{
@@ -750,6 +752,7 @@ const Element9Cross = ({ bgColor, strokeColor }: { bgColor: string; strokeColor:
 
 const SvgText = ({ text }: { text: string }) => {
   if (!DEBUG) return null;
+
   return (
     <text
       x="50%"

@@ -8,6 +8,7 @@ interface LogoProps {
 
 const polarToCartesian = (cx: number, cy: number, r: number, angle: number) => {
   const angleInRadians = (angle - 90) * (Math.PI / 180.0);
+
   return {
     x: cx + r * Math.cos(angleInRadians),
     y: cy + r * Math.sin(angleInRadians),

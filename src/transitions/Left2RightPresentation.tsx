@@ -40,7 +40,6 @@ const Left2RightPresentation: React.FC<
             height={passedProps.height * 2.5}
             style={{
               transform: 'translateY(-100px) translateX(-790px)',
-
               overflow: 'visible',
             }}
           >
@@ -97,6 +96,7 @@ const Left2RightPresentation: React.FC<
     </AbsoluteFill>
   );
 };
+
 export default Left2RightPresentation;
 
 export const customL2RPresentation = (

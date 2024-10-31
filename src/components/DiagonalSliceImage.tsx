@@ -9,7 +9,6 @@ interface DiagonalSliceImageProps {
 
 const DiagonalSliceImage: React.FC<DiagonalSliceImageProps> = ({ src, style, props }) => {
   const frame = useCurrentFrame();
-
   const moveGlassDown = interpolate(
     frame,
     [props.glassStart, props.glassStart + (60 - props.glassSpeed * 2)],

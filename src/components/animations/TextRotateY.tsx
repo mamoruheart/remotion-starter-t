@@ -4,6 +4,7 @@ import { defaultSpring } from '../../lib/helpers';
 
 export const TextRotateY = ({ text, startFrom = 66 }: { text: string; startFrom?: number }) => {
   const frame = useCurrentFrame();
+
   return (
     <>
       {text.split('\n').map((line, key) => (

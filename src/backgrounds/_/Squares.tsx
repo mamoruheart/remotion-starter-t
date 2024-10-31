@@ -20,6 +20,7 @@ export const SquaresBackground = defineBackground({
     const y2 = interpolate(Math.cos(random('4') * 100 + frame * 0.0523), [-1, 1], output);
 
     const grid = staticFile('/backgrounds/grid.webp');
+
     return (
       <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>
         <RandomFlash seed="1" />

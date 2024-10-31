@@ -93,11 +93,9 @@ export const useTextSplitter = ({
   const isFontLoaded = useIsFontLoaded(font);
   const key = useMemo(() => JSON.stringify(props), [props]);
   const [result, setResult] = useState<{ fontSize: number; text: string }>();
-  // const context = useVideoContext()
   const { id } = useVideoConfig();
 
   useEffect(() => {
-    // console.log(document.querySelectorAll("div"), "docu all ");
     if (!isFontLoaded) return;
     const template = document.querySelector(`#${id}`)!;
     console.log(template, 'template');

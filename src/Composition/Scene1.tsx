@@ -13,6 +13,7 @@ export const scene1Schema = z.object({
   title: z.string(),
   subtitle: z.string().optional(),
 });
+
 type Scene1Props = z.infer<typeof scene1Schema> & { background: BackgroundProps };
 
 const Scene1: React.FC<Scene1Props> = (props) => {

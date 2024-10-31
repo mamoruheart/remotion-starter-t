@@ -4,6 +4,7 @@ import { defaultSpring, interpolateSpring } from '../../lib/helpers';
 
 export const TextCharsFromRightToLeft = ({ text }: { text: string }) => {
   const frame = useCurrentFrame();
+
   return (
     <>
       {text.split('').map((char, i) => {

@@ -11,7 +11,6 @@ const Circle = ({ radius, strokeWidth, strokeColor }: CircleProps) => {
   const circumference = 2 * Math.PI * radius;
   const segmentLength = circumference / 6;
   const gapLength = circumference / 6;
-
   const rotate = frame / 4;
 
   return (

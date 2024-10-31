@@ -17,7 +17,7 @@ export const CrossesBackground = defineBackground({
   component: ({ style, background, stroke }) => {
     const crossArray = [];
 
-    for (let i = 0; i < WIDTH / 250; i++)
+    for (let i = 0; i < WIDTH / 250; i++) {
       for (let j = 0; j < HEIGHT / 250; j++) {
         const cross = (
           <div
@@ -34,6 +34,7 @@ export const CrossesBackground = defineBackground({
 
         crossArray.push(cross);
       }
+    }
 
     return (
       <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>

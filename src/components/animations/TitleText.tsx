@@ -4,6 +4,7 @@ export const TitleText = ({ text, startAt = 0 }: { text: string; startAt?: numbe
   const { durationInFrames, fps } = useVideoConfig();
   const frame = useCurrentFrame();
   const lines = text.split('\n');
+
   return (
     <>
       {lines.map((line, lineIndex) => (

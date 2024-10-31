@@ -5,6 +5,7 @@ export const VideoContextProps = z.object({
   adId: z.string(),
   baseUrl: z.string(),
 });
+
 export type VideoContextProps = z.infer<typeof VideoContextProps>;
 
 export const VideoContext = createContext<VideoContextProps>({

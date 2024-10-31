@@ -5,6 +5,7 @@ export const TitleTextFromRight = ({ text, startAt = 0 }: { text: string; startA
   const { durationInFrames } = useVideoConfig();
   const frame = useCurrentFrame();
   const lines = text.split('\n');
+
   return (
     <>
       {lines.map((line, lineIndex) => (

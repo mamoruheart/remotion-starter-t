@@ -12,7 +12,6 @@ const Image = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
   const circumference = 2 * Math.PI * radius;
   const segmentLength = circumference / 6;
   const gapLength = circumference / 6;
-
   const rotate = frame / 4;
 
   const scale = interpolate(frame, [30, 50], [0, 1], {

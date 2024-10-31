@@ -36,7 +36,7 @@ const rectWidenPresentation: React.FC<
   // const translatedPath2 = translatePath(
   //   path2,
   //   passedProps.width / 2 - boundingBox.width / 2,
-  //   passedProps.height / 2 - boundingBox.height / 2,
+  //   passedProps.height / 2 - boundingBox.height / 2
   // );
   const [clipId] = useState(() => String(random(null)));
   const style: React.CSSProperties = useMemo(() => {
@@ -46,6 +46,7 @@ const rectWidenPresentation: React.FC<
       clipPath: presentationDirection === 'exiting' ? undefined : `url(#${clipId})`,
     };
   }, [clipId, presentationDirection]);
+
   return (
     <AbsoluteFill style={{ zIndex: 9 }}>
       <AbsoluteFill style={style}>{children}</AbsoluteFill>
@@ -63,10 +64,13 @@ const rectWidenPresentation: React.FC<
                   fill="black"
                 />
               </clipPath>
-              {/* <path style={{
+              {/* <path
+                style={{
                   transformOrigin: 'center',
                   transform: `rotate(${passedProps.rotation}deg)`,
-                }} d={translatedPath2} /> */}
+                }}
+                d={translatedPath2}
+              /> */}
             </defs>
           </svg>
         </AbsoluteFill>

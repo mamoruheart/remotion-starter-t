@@ -39,7 +39,8 @@ const Right2LeftPresentation: React.FC<
             width="200%"
             height={passedProps.height * 2.5}
             style={{
-              transform: 'translateY(-100px) translateX(1350px)', // Adjusted for right to left animation
+              // Adjusted for right to left animation
+              transform: 'translateY(-100px) translateX(1350px)',
               overflow: 'visible',
             }}
           >
@@ -50,7 +51,8 @@ const Right2LeftPresentation: React.FC<
                   y={passedProps.height / 2 - size / 2}
                   width={size}
                   height={size}
-                  transform={`rotate(45, ${passedProps.width / 2}, ${passedProps.height / 2}) translate(-80, -480)`} // Adjusted for right to left animation
+                  // Adjusted for right to left animation
+                  transform={`rotate(45, ${passedProps.width / 2}, ${passedProps.height / 2}) translate(-80, -480)`}
                 />
               </clipPath>
               <linearGradient id="gradientStroke" x1="0%" y1="0%" x2="100%" y2="100%">

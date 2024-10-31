@@ -112,7 +112,8 @@ function getCenterX(direction: string, width: number): number {
     case 'bottom':
       return width / 2;
     default:
-      return width; // for other directions, default to the full width
+      // for other directions, default to the full width
+      return width;
   }
 }
 
@@ -125,7 +126,8 @@ function getCenterY(direction: string, height: number): number {
     case 'right':
       return height / 2;
     default:
-      return height; // for other directions, default to the full height
+      // for other directions, default to the full height
+      return height;
   }
 }
 

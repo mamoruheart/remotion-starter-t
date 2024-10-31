@@ -4,6 +4,7 @@ import { defaultSpring } from '../../lib/helpers';
 
 export const TextLineByLine = ({ text, startFrom = 6 }: { text: string; startFrom?: number }) => {
   const frame = useCurrentFrame();
+
   return (
     <>
       {text.split('\n').map((text, i) => (
