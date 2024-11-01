@@ -41,9 +41,13 @@ export const colorVar = (color: Color) => (color.startsWith('#') ? color : `var(
 export const fontVar = (font: Font) => `var(--font-${font})`;
 
 export const formatFontName = (fontName: string) => {
-  return fontName
-    .replace(/([a-z])([A-Z])/g, '$1 $2') // Insert space between lowercase and uppercase letters
-    .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2'); // Insert space between two uppercase letters followed by lowercase
+  return (
+    fontName
+      // Insert space between lowercase and uppercase letters
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      // Insert space between two uppercase letters followed by lowercase
+      .replace(/([A-Z])([A-Z][a-z])/g, '$1 $2')
+  );
 };
 
 export const quote = (text: string) => `'${text}'`;

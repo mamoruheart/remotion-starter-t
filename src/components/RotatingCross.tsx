@@ -16,7 +16,8 @@ const Cross = ({ color, seed = 10 }: { color: string; seed?: number }) => {
         width: 100,
         height: 100,
         transform: `rotate(${rotation}deg)`,
-        transition: 'transform 0.2s ease-in-out', // 0.2 second transition for the rotation
+        // 0.2 second transition for the rotation
+        transition: 'transform 0.2s ease-in-out',
         opacity: 0.02,
       }}
     >

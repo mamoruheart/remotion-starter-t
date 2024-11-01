@@ -7,7 +7,7 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="Template"
+        id="Vertex"
         component={Main}
         schema={MainSchema}
         fps={30}
@@ -41,32 +41,32 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: 30,
           scene1Duration: 150,
           scene1Props: {
-            logo: staticFile('Logo.png'),
-            title: 'Hello world',
+            logo: staticFile('logo.png'),
+            title: 'Hello VERTEX',
           },
           scene2Duration: 180,
           scene2Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_1.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_1.jpg'),
           },
           scene3Duration: 180,
           scene3Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_2.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_2.jpg'),
           },
           scene4Duration: 180,
           scene4Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_3.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_3.jpg'),
           },
           scene5Duration: 180,
           scene5Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_4.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_4.jpg'),
           },
           scene6Duration: 180,
           scene6Props: {
-            logo: staticFile('Logo.png'),
+            logo: staticFile('logo.png'),
           },
         }}
       />
@@ -105,32 +105,32 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: 30,
           scene1Duration: 150,
           scene1Props: {
-            logo: staticFile('Logo.png'),
-            title: 'Hello world',
+            logo: staticFile('logo.png'),
+            title: 'Hello VERTEX',
           },
           scene2Duration: 180,
           scene2Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_1.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_1.jpg'),
           },
           scene3Duration: 180,
           scene3Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_2.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_2.jpg'),
           },
           scene4Duration: 180,
           scene4Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_3.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_3.jpg'),
           },
           scene5Duration: 180,
           scene5Props: {
-            logo: staticFile('Logo.png'),
-            img: staticFile('Media_4.jpg'),
+            logo: staticFile('logo.png'),
+            img: staticFile('media_4.jpg'),
           },
           scene6Duration: 180,
           scene6Props: {
-            logo: staticFile('Logo.png'),
+            logo: staticFile('logo.png'),
           },
         }}
       />

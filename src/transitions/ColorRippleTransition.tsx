@@ -43,7 +43,8 @@ export const RippleTransition: React.FC<
     }),
   ];
 
-  const colors = passedProps.colors; // Array of colors
+  // Array of colors
+  const colors = passedProps.colors;
 
   const style: React.CSSProperties = useMemo(() => {
     return {

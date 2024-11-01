@@ -121,7 +121,8 @@ const Logo = ({ logo, radius, direction = 'from-left' }: LogoProps) => {
         style={{
           width: radius * 2,
           height: radius * 2,
-          clipPath: 'url(#revealMask)', // Uses the clip path for circular reveal
+          // Uses the clip path for circular reveal
+          clipPath: 'url(#revealMask)',
           position: 'absolute',
           zIndex: 1,
         }}

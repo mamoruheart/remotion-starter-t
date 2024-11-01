@@ -10,3 +10,4 @@ examples/
 
 # custom config
 public/examples/*.mp4
+public/out/*.mp4

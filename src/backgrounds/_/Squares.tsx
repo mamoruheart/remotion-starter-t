@@ -19,6 +19,7 @@ export const SquaresBackground = defineBackground({
     const x2 = interpolate(Math.sin(random('3') * 100 + frame * 0.055), [-1, 1], output);
     const y2 = interpolate(Math.cos(random('4') * 100 + frame * 0.0523), [-1, 1], output);
 
+    // ? resource not existing ?
     const grid = staticFile('/backgrounds/grid.webp');
 
     return (

@@ -28,7 +28,8 @@ export const TitleText = ({ text, startAt = 0 }: { text: string; startAt?: numbe
         >
           {line.split('').map((letter, index) => {
             const globalIndex = lineIndex * line.length + index;
-            const letterDelay = globalIndex * (fps / 20); // Reduced delay to make the animation faster
+            // Reduced delay to make the animation faster
+            const letterDelay = globalIndex * (fps / 20);
             const startFrame = Math.max(0, frame - startAt - letterDelay);
             const opacity = interpolate(startFrame, [0, fps], [0, 1], {
               extrapolateLeft: 'clamp',

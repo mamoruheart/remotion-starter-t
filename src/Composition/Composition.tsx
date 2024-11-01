@@ -78,7 +78,7 @@ const Main: React.FC<MainProps> = ({
           ...getCSSVariables({ colors: colors, fonts: fonts, roundness: 1 }),
         }}
       >
-        {/* change the name of your music file in the public folder to match music.mp3  */}
+        {/* change the name of your music file in the public folder to match `music.mp3` */}
         <Audio src={staticFile('music.mp3')} volume={audioVolume} />
 
         <TransitionSeries>
