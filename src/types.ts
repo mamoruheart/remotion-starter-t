@@ -26,7 +26,7 @@ export const Colors = z
     black: z.string(),
     white: z.string(),
   })
-  .describe('Hex color pa llete for the video');
+  .describe('Hex color pallete for the video');
 
 export const ColorEnum = z.enum([
   'primary',

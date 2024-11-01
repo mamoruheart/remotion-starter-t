@@ -75,7 +75,7 @@ const Main: React.FC<MainProps> = ({
         id={id}
         style={{
           background: 'black',
-          ...getCSSVariables({ colors: colors, fonts: fonts, roundness: 1 }),
+          ...getCSSVariables({ colors, fonts, roundness: 1 }),
         }}
       >
         {/* change the name of your music file in the public folder to match `music.mp3` */}
@@ -85,38 +85,48 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence durationInFrames={scene1Duration}>
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
+
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-right' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
+
           <TransitionSeries.Sequence durationInFrames={scene2Duration}>
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
+
           <TransitionSeries.Transition
             presentation={customCenterPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
+
           <TransitionSeries.Sequence durationInFrames={scene3Duration}>
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
+
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
+
           <TransitionSeries.Sequence durationInFrames={scene4Duration}>
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
+
           <TransitionSeries.Transition
             presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
+
           <TransitionSeries.Sequence durationInFrames={scene5Duration}>
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
+
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
+
           <TransitionSeries.Sequence durationInFrames={scene6Duration}>
             <Scene6 {...scene6Props} background={background} />
           </TransitionSeries.Sequence>

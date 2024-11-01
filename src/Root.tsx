@@ -4,39 +4,52 @@ import Main, { MainSchema } from './Composition/Composition';
 import { Compare } from './Composition/Compare';
 
 export const RemotionRoot: React.FC = () => {
+  const cFps = 30;
+  const cW = 1920;
+  const cH = 1080;
+  const cAudVol = 0.5;
+  const cMusic = staticFile('music.mp3');
+  const colorsProp = {
+    background: '#000000',
+    backgroundText: '#FFFFFF',
+    black: '#000000',
+    white: '#FFFFFF',
+    primary: '#f00',
+    primaryText: '#FFFFFF',
+    secondary: '#5118DB',
+    secondaryText: '#f00',
+    accent: '#FFFF08',
+    accentText: '#f00',
+  };
+  const cBgType = 'crosses';
+  const cBgBackground = 'background';
+  const cBgStroke = 'black';
+  const cFontPrimary = 'Montserrat';
+  const cFontSecondary = 'Abel';
+
   return (
     <>
+      {/* VERTEX */}
       <Composition
         id="Vertex"
         component={Main}
         schema={MainSchema}
-        fps={30}
-        width={1920}
-        height={1080}
+        fps={cFps}
+        width={cW}
+        height={cH}
         durationInFrames={900}
         defaultProps={{
-          audioVolume: 0.5,
-          music: staticFile('music.mp3'),
-          colors: {
-            background: '#151515',
-            backgroundText: '#FFFFFF',
-            black: '#000000',
-            white: '#FFFFFF',
-            primary: '#f00',
-            primaryText: '#FFFFFF',
-            secondary: '#5118DB',
-            secondaryText: '#f00',
-            accent: '#FFFF08',
-            accentText: '#f00',
-          },
+          audioVolume: cAudVol,
+          music: cMusic,
+          colors: colorsProp,
           background: {
-            type: 'crosses',
-            background: 'background',
-            stroke: 'backgroundText',
+            type: cBgType,
+            background: cBgBackground,
+            stroke: cBgStroke,
           },
           fonts: {
-            primary: 'Montserrat',
-            secondary: 'Abel',
+            primary: cFontPrimary,
+            secondary: cFontSecondary,
           },
           transitionDuration: 30,
           scene1Duration: 150,
@@ -70,37 +83,27 @@ export const RemotionRoot: React.FC = () => {
           },
         }}
       />
+      {/* COMPARE */}
       <Composition
         id="Compare"
         component={Compare}
         schema={MainSchema}
-        fps={30}
-        width={1920 * 2}
-        height={1080}
+        fps={cFps}
+        width={cW * 2}
+        height={cH}
         durationInFrames={900}
         defaultProps={{
-          audioVolume: 0.5,
-          music: staticFile('music.mp3'),
-          colors: {
-            background: '#151515',
-            backgroundText: '#FFFFFF',
-            black: '#000000',
-            white: '#FFFFFF',
-            primary: '#f00',
-            primaryText: '#FFFFFF',
-            secondary: '#5118DB',
-            secondaryText: '#f00',
-            accent: '#FFFF08',
-            accentText: '#f00',
-          },
+          audioVolume: cAudVol,
+          music: cMusic,
+          colors: colorsProp,
           background: {
-            type: 'crosses',
-            background: 'background',
-            stroke: 'backgroundText',
+            type: cBgType,
+            background: cBgBackground,
+            stroke: cBgStroke,
           },
           fonts: {
-            primary: 'Montserrat',
-            secondary: 'Abel',
+            primary: cFontPrimary,
+            secondary: cFontSecondary,
           },
           transitionDuration: 30,
           scene1Duration: 150,
