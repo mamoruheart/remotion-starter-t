@@ -16,6 +16,7 @@ export const LinesBackground = defineBackground({
   component: ({ rotate, style, background, color }) => {
     const frame = useCurrentFrame();
     const value = Math.sin(frame / 22);
+
     const getX = (i: number) => {
       const base = -2000 + i * 410;
       return interpolate(value, [-1, 1], i % 2 === 0 ? [base, base + 230] : [base + 230, base]);

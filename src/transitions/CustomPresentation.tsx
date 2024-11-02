@@ -64,13 +64,6 @@ const rectWidenPresentation: React.FC<
                   fill="black"
                 />
               </clipPath>
-              {/* <path
-                style={{
-                  transformOrigin: 'center',
-                  transform: `rotate(${passedProps.rotation}deg)`,
-                }}
-                d={translatedPath2}
-              /> */}
             </defs>
           </svg>
         </AbsoluteFill>

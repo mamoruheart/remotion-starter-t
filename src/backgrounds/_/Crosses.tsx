@@ -16,7 +16,6 @@ export const CrossesBackground = defineBackground({
   }),
   component: ({ style, background, stroke }) => {
     const crossArray = [];
-
     for (let i = 0; i < WIDTH / 250; i++) {
       for (let j = 0; j < HEIGHT / 250; j++) {
         const cross = (
@@ -31,7 +30,6 @@ export const CrossesBackground = defineBackground({
             <Cross color={colorVar(stroke)} seed={Math.random() * 50} />
           </div>
         );
-
         crossArray.push(cross);
       }
     }

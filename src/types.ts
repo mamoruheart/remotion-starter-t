@@ -6,11 +6,9 @@ export const Fonts = z.object({
   primary: FontFamily,
   secondary: FontFamily.optional(),
 });
-
 export type Fonts = z.infer<typeof Fonts>;
 
 export const Font = z.enum(['primary', 'secondary']);
-
 export type Font = z.infer<typeof Font>;
 
 export const Colors = z
@@ -44,5 +42,4 @@ export const ColorEnum = z.enum([
 export const ColorHex = z.custom<`#${string}`>((val: any) => /^#[0-9A-F]{6}$/i.test(val));
 
 export const Color = z.union([ColorHex, ColorEnum]);
-
 export type Color = z.infer<typeof Color>;

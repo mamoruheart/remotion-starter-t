@@ -31,7 +31,6 @@ const findMaxFontSize = ({
   const element = createElement(style);
   element.textContent = text.replaceAll('-', '\u2011');
   template.appendChild(element);
-
   let fontSize = initialFontSize;
   const maxHeight = maxLines * initialFontSize;
   while (element.clientHeight > maxHeight || element.scrollWidth > maxWidth) {
@@ -99,7 +98,6 @@ export const useTextSplitter = ({
     if (!isFontLoaded) return;
     const template = document.querySelector(`#${id}`)!;
     console.log(template, 'template');
-
     const style: CSSProperties = {
       position: 'absolute',
       lineHeight: '1',
@@ -118,9 +116,7 @@ export const useTextSplitter = ({
       maxWidth: props.maxWidth,
       text: props.text,
     });
-
     const text = splitTextIntoLines({ inputText: props.text, fontSize, style, template });
-
     if (DEBUG) console.log({ key, text, fontSize });
     setResult({ fontSize, text });
     continueRender(handle);

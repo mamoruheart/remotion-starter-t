@@ -23,5 +23,4 @@ export const BackgroundProps = z.discriminatedUnion(
   'type',
   BACKGROUNDS.map((bg) => bg.schema) as [BackgroundSchema, ...BackgroundSchema[]]
 );
-
 export type BackgroundProps = z.infer<typeof BackgroundProps>;

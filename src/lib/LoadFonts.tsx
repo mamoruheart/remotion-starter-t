@@ -13,10 +13,8 @@ export const LoadFonts = ({ children, fonts }: { children: React.ReactNode; font
   useEffect(() => {
     for (const [font, fontFamily] of Object.entries(fonts)) {
       console.log('f', font, fontFamily);
-
       if (!fontFamily) continue;
       if (loaded[font as Font]) continue;
-
       const fn = FONT_FAMILIES[fontFamily] as () => Promise<{
         loadFont: () => { waitUntilDone: () => Promise<void> };
       }>;

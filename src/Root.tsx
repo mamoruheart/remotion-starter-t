@@ -26,6 +26,7 @@ export const RemotionRoot: React.FC = () => {
   const cBgStroke = 'black';
   const cFontPrimary = 'Montserrat';
   const cFontSecondary = 'Abel';
+  const cTransDuration = 30;
 
   return (
     <>
@@ -51,7 +52,7 @@ export const RemotionRoot: React.FC = () => {
             primary: cFontPrimary,
             secondary: cFontSecondary,
           },
-          transitionDuration: 30,
+          transitionDuration: cTransDuration,
           scene1Duration: 150,
           scene1Props: {
             logo: staticFile('logo.png'),
@@ -105,7 +106,7 @@ export const RemotionRoot: React.FC = () => {
             primary: cFontPrimary,
             secondary: cFontSecondary,
           },
-          transitionDuration: 30,
+          transitionDuration: cTransDuration,
           scene1Duration: 150,
           scene1Props: {
             logo: staticFile('logo.png'),

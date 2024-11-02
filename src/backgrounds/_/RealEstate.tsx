@@ -42,7 +42,6 @@ export const RealEstateBackground = defineBackground({
 const Element1 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 120;
-
   const dashArray = interpolate(progress, [0, 0.4, 1], [20, 160, 320]);
   const dashOffset = interpolate(progress, [0, 1], [0, 1200 * 2]);
 
@@ -99,7 +98,6 @@ const AnimatedLine = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: 
   const frame = useCurrentFrame();
   const duration = 60;
   const progress = ((frame - 80) % duration) / duration;
-
   const dashOffset = interpolate(progress, [0, 0.25, 0.5, 0.75, 1], [400, 0, 0, -400, -400], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
@@ -137,7 +135,6 @@ const AnimatedLine = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: 
 const AnimatedLine2 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = (frame % 90) / 90;
-
   const No1y2 = interpolate(
     progress,
     [0, 0.2, 0.4, 0.41, 0.5, 0.6].map((num) => (num * 10) / 6),
@@ -156,9 +153,7 @@ const AnimatedLine2 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor:
       extrapolateRight: 'clamp',
     }
   );
-
   const progress2 = ((frame - 30) % 90) / 90;
-
   const No2y2 = interpolate(
     progress2,
     [0, 0.2, 0.4, 0.41, 0.5, 0.6].map((num) => (num * 10) / 6),
@@ -246,20 +241,17 @@ const AnimatedLine2 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor:
 const Element3 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 180;
-
-  let dashArray;
+  let dashArray = NaN;
   if (progress <= 0.5) {
     dashArray = interpolate(progress, [0, 0.5], [0, 2200]);
   } else {
     dashArray = 2200 - 700;
   }
-
+  const strokeDashOffset = interpolate(progress, [0, 0.51, 1], [0, 0, -2200 + 700]);
   const dashArrayString =
     progress <= 0.5
       ? [dashArray, 2200 - dashArray].map((num) => num * 1).join(' ')
       : [dashArray, 700].map((num) => num * 1).join(' ');
-
-  const strokeDashOffset = interpolate(progress, [0, 0.51, 1], [0, 0, -2200 + 700]);
 
   return (
     <div
@@ -316,9 +308,8 @@ const Element3 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element4 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 120;
-
-  let dashArray;
-  let dashArrayString;
+  let dashArray = NaN;
+  let dashArrayString = '';
   if (progress <= 0.5) {
     dashArray = interpolate(progress, [0, 0.5], [0, 2800], {
       extrapolateLeft: 'clamp',
@@ -328,7 +319,6 @@ const Element4 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
   } else {
     dashArrayString = [2100, 700].map((num) => num * 1).join(' ');
   }
-
   const strokeDashOffset = interpolate(progress, [0, 0.51, 1], [0, 0, -3400 * 1], {
     extrapolateLeft: 'clamp',
   });
@@ -386,9 +376,8 @@ const Element4 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element5 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 180;
-
-  let dashArray;
-  let dashArrayString;
+  let dashArray = NaN;
+  let dashArrayString = '';
   if (progress <= 0.5) {
     dashArray = interpolate(progress, [0, 0.5], [0, 3000], {
       extrapolateLeft: 'clamp',
@@ -398,7 +387,6 @@ const Element5 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');
   }
-
   const strokeDashOffset = interpolate(progress, [0, 0.49, 0.5, 1], [0, 0, -900, -900 * 3], {
     extrapolateLeft: 'clamp',
   });
@@ -462,21 +450,19 @@ const Element5 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element6 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 180;
-
-  let dashArray;
-  let dashArrayString;
+  let dashArray = NaN;
+  let dashArrayString = '';
   if (progress <= 33.33) {
     dashArray = interpolate(progress, [0, 1], [0, 3000], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     });
     dashArrayString = [dashArray, 3000 - dashArray].map((num) => num * 1).join(' ');
-
+    // ?
     dashArrayString = [1800, 1800].map((num) => num * 1).join(' ');
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');
   }
-
   const strokeDashOffset = interpolate(progress, [0, 1], [0, -3000]);
 
   return (
@@ -529,9 +515,8 @@ const Element6 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element7 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 180;
-
-  let dashArray;
-  let dashArrayString;
+  let dashArray = NaN;
+  let dashArrayString = '';
   if (progress <= 33.33) {
     dashArray = interpolate(progress, [0, 0.5], [0, 1800], {
       extrapolateLeft: 'clamp',
@@ -541,7 +526,6 @@ const Element7 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');
   }
-
   const strokeDashOffset = interpolate(progress, [0, 0.5, 1], [1200, 1200, -2400 * 0.7], {
     extrapolateLeft: 'clamp',
   });
@@ -599,20 +583,19 @@ const Element7 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element8 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = frame / 180;
-
-  let dashArray;
-  let dashArrayString;
+  let dashArray = NaN;
+  let dashArrayString = '';
   if (progress <= 33.33) {
     dashArray = interpolate(progress, [0, 0.33], [0, 2400], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     });
     dashArrayString = [dashArray, 2400 - dashArray].map((num) => num * 1).join(' ');
+    // ?
     dashArrayString = [1200, 2400 - 1200].map((num) => num * 1).join(' ');
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');
   }
-
   const strokeDashOffset = interpolate(progress, [0, 1], [3023, -1200 * 1], {
     extrapolateLeft: 'clamp',
   });
@@ -667,7 +650,6 @@ const Element8 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
 const Element9Cross = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: string }) => {
   const frame = useCurrentFrame();
   const progress = (frame % 90) / 90;
-
   const No1y2 = interpolate(
     progress,
     [0, 0.2, 0.4, 0.41, 0.5, 0.6].map((num) => (num * 10) / 6),
@@ -686,9 +668,7 @@ const Element9Cross = ({ bgColor, strokeColor }: { bgColor: string; strokeColor:
       extrapolateRight: 'clamp',
     }
   );
-
   const progress2 = ((frame - 30) % 90) / 90;
-
   const No2y2 = interpolate(
     progress2,
     [0, 0.2, 0.4, 0.41, 0.5, 0.6].map((num) => (num * 10) / 6),

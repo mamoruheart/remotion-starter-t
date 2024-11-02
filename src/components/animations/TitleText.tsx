@@ -35,7 +35,6 @@ export const TitleText = ({ text, startAt = 0 }: { text: string; startAt?: numbe
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
-
             return (
               <span key={index} style={{ opacity }}>
                 {letter}

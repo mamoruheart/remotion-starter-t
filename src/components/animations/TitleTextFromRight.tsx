@@ -43,7 +43,6 @@ export const TitleTextFromRight = ({ text, startAt = 0 }: { text: string; startA
               extrapolateLeft: 'clamp',
               extrapolateRight: 'clamp',
             });
-
             return (
               <Fragment key={`word-${index}`}>
                 <span

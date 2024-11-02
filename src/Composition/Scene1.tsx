@@ -27,15 +27,6 @@ const Scene1: React.FC<Scene1Props> = (props) => {
     maxWidth: 1000,
   });
 
-  // const subtitleSplit = useTextSplitter({
-  //   text: props.subtitle,
-  //   fontSize: 100,
-  //   fontWeight: '600',
-  //   letterSpacing: '6px',
-  //   maxLines: 1,
-  //   maxWidth: 1000,
-  // });
-
   return (
     <AbsoluteFill
       style={{
