@@ -5,10 +5,17 @@ import { Compare } from './Composition/Compare';
 
 export const RemotionRoot: React.FC = () => {
   const cFps = 30;
+  const sceneDurationsInSec = {
+    scene1: 5,
+    scene2: 4,
+    scene3: 6,
+    scene4: 4,
+    scene5: 6,
+    scene6: 3,
+  };
   const cW = 1920;
   const cH = 1080;
   const cAudVol = 0.5;
-  const cMusic = staticFile('music.mp3');
   const colorsProp = {
     background: '#000000',
     backgroundText: '#FFFFFF',
@@ -38,10 +45,17 @@ export const RemotionRoot: React.FC = () => {
         fps={cFps}
         width={cW}
         height={cH}
-        durationInFrames={900}
+        durationInFrames={
+          cFps *
+          (sceneDurationsInSec.scene1 +
+            sceneDurationsInSec.scene2 +
+            sceneDurationsInSec.scene3 +
+            sceneDurationsInSec.scene4 +
+            sceneDurationsInSec.scene5 +
+            sceneDurationsInSec.scene6)
+        }
         defaultProps={{
           audioVolume: cAudVol,
-          music: cMusic,
           colors: colorsProp,
           background: {
             type: cBgType,
@@ -53,32 +67,32 @@ export const RemotionRoot: React.FC = () => {
             secondary: cFontSecondary,
           },
           transitionDuration: cTransDuration,
-          scene1Duration: 150,
+          scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
             logo: staticFile('logo_ama.png'),
             title: 'Hello VERTEX',
           },
-          scene2Duration: 180,
+          scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
           },
-          scene3Duration: 180,
+          scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
           },
-          scene4Duration: 180,
+          scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
           },
-          scene5Duration: 180,
+          scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
           },
-          scene6Duration: 180,
+          scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama.png'),
           },
@@ -92,10 +106,17 @@ export const RemotionRoot: React.FC = () => {
         fps={cFps}
         width={cW * 2}
         height={cH}
-        durationInFrames={900}
+        durationInFrames={
+          cFps *
+          (sceneDurationsInSec.scene1 +
+            sceneDurationsInSec.scene2 +
+            sceneDurationsInSec.scene3 +
+            sceneDurationsInSec.scene4 +
+            sceneDurationsInSec.scene5 +
+            sceneDurationsInSec.scene6)
+        }
         defaultProps={{
           audioVolume: cAudVol,
-          music: cMusic,
           colors: colorsProp,
           background: {
             type: cBgType,
@@ -107,32 +128,32 @@ export const RemotionRoot: React.FC = () => {
             secondary: cFontSecondary,
           },
           transitionDuration: cTransDuration,
-          scene1Duration: 150,
+          scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
             logo: staticFile('logo_ama.png'),
             title: 'Hello VERTEX',
           },
-          scene2Duration: 180,
+          scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
           },
-          scene3Duration: 180,
+          scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
           },
-          scene4Duration: 180,
+          scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
           },
-          scene5Duration: 180,
+          scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
           },
-          scene6Duration: 180,
+          scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama.png'),
           },

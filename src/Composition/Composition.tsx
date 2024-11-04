@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, staticFile, useVideoConfig, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, Audio, staticFile, useVideoConfig, Sequence } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { z } from 'zod';
 
@@ -19,7 +19,6 @@ import { customL2RPresentation } from '../transitions/Left2RightPresentation';
 
 export const MainSchema = z.object({
   audioVolume: z.number(),
-  music: z.string(),
   colors: Colors,
   fonts: Fonts,
   background: BackgroundProps,
@@ -67,87 +66,93 @@ const Main: React.FC<MainProps> = ({
   //----------------------------------------------
   // If you want to use a different component than a <TransitionSeries>
   // then you'll have to talk to me why it's necessary.
-  const frame = useCurrentFrame();
-  const startFrames = [
-    0,
-    scene1Duration,
-    scene1Duration + scene2Duration,
-    scene1Duration + scene2Duration + scene3Duration,
-    scene1Duration + scene2Duration + scene3Duration + scene4Duration,
-    scene1Duration + scene2Duration + scene3Duration + scene4Duration + scene5Duration,
-  ];
 
   return (
     <LoadFonts fonts={fonts}>
+      {/* Audio sequences for background music */}
+      <Sequence from={0} durationInFrames={scene1Duration}>
+        <Audio src={staticFile('announce_1.mp3')} volume={audioVolume} />
+      </Sequence>
+      <Sequence from={scene1Duration} durationInFrames={scene2Duration}>
+        <Audio src={staticFile('announce_2.mp3')} volume={audioVolume} />
+      </Sequence>
+      <Sequence from={scene1Duration + scene2Duration} durationInFrames={scene3Duration}>
+        <Audio src={staticFile('announce_3.mp3')} volume={audioVolume} />
+      </Sequence>
+      <Sequence
+        from={scene1Duration + scene2Duration + scene3Duration}
+        durationInFrames={scene4Duration}
+      >
+        <Audio src={staticFile('announce_4.mp3')} volume={audioVolume} />
+      </Sequence>
+      <Sequence
+        from={scene1Duration + scene2Duration + scene3Duration + scene4Duration}
+        durationInFrames={scene5Duration}
+      >
+        <Audio src={staticFile('announce_5.mp3')} volume={audioVolume} />
+      </Sequence>
+      <Sequence
+        from={scene1Duration + scene2Duration + scene3Duration + scene4Duration + scene5Duration}
+        durationInFrames={scene6Duration}
+      >
+        <Audio src={staticFile('announce_6.mp3')} volume={audioVolume} />
+      </Sequence>
+
+      {/* Visual transition composition */}
       <AbsoluteFill
         id={id}
         style={{
           background: 'black',
-          ...getCSSVariables({ colors, fonts, roundness: 1 }),
+          ...getCSSVariables({
+            colors,
+            fonts,
+            roundness: 1,
+          }),
         }}
       >
-        {/* Conditionally render audio tracks based on current frame */}
-        {frame >= startFrames[0] && (
-          <Audio src={staticFile('announce_1.mp3')} volume={audioVolume} />
-        )}
-        {frame >= startFrames[1] && (
-          <Audio src={staticFile('announce_2.mp3')} volume={audioVolume} />
-        )}
-        {frame >= startFrames[2] && (
-          <Audio src={staticFile('announce_3.mp3')} volume={audioVolume} />
-        )}
-        {frame >= startFrames[3] && (
-          <Audio src={staticFile('announce_4.mp3')} volume={audioVolume} />
-        )}
-        {frame >= startFrames[4] && (
-          <Audio src={staticFile('announce_5.mp3')} volume={audioVolume} />
-        )}
-        {frame >= startFrames[5] && (
-          <Audio src={staticFile('announce_6.mp3')} volume={audioVolume} />
-        )}
-
         <TransitionSeries>
-          <TransitionSeries.Sequence durationInFrames={scene1Duration}>
+          {/* scene 1 */}
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene1Duration}>
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-right' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-
-          <TransitionSeries.Sequence durationInFrames={scene2Duration}>
+          {/* scene 2 */}
+          <TransitionSeries.Sequence offset={30} durationInFrames={scene2Duration}>
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
             presentation={customCenterPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-
-          <TransitionSeries.Sequence durationInFrames={scene3Duration}>
+          {/* scene 3 */}
+          <TransitionSeries.Sequence offset={30} durationInFrames={scene3Duration}>
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-
-          <TransitionSeries.Sequence durationInFrames={scene4Duration}>
+          {/* scene 4 */}
+          <TransitionSeries.Sequence offset={30} durationInFrames={scene4Duration}>
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
             presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-
-          <TransitionSeries.Sequence durationInFrames={scene5Duration}>
+          {/* scene 5 */}
+          <TransitionSeries.Sequence offset={30} durationInFrames={scene5Duration}>
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-
-          <TransitionSeries.Sequence durationInFrames={scene6Duration}>
+          {/* scene 6 */}
+          <TransitionSeries.Sequence offset={30} durationInFrames={scene6Duration}>
             <Scene6 {...scene6Props} background={background} />
           </TransitionSeries.Sequence>
         </TransitionSeries>
