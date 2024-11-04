@@ -1,4 +1,4 @@
-import { AbsoluteFill, Audio, staticFile, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Audio, staticFile, useVideoConfig, useCurrentFrame } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { z } from 'zod';
 
@@ -60,14 +60,22 @@ const Main: React.FC<MainProps> = ({
   scene6Props,
 }) => {
   const { id } = useVideoConfig();
-
   // You work will be mainly with the Scenes files
-
+  //----------------------------------------------
   // Work in this File:
   // adapt the transitions to an existing one or to your new one
-
+  //----------------------------------------------
   // If you want to use a different component than a <TransitionSeries>
   // then you'll have to talk to me why it's necessary.
+  const frame = useCurrentFrame();
+  const startFrames = [
+    0,
+    scene1Duration,
+    scene1Duration + scene2Duration,
+    scene1Duration + scene2Duration + scene3Duration,
+    scene1Duration + scene2Duration + scene3Duration + scene4Duration,
+    scene1Duration + scene2Duration + scene3Duration + scene4Duration + scene5Duration,
+  ];
 
   return (
     <LoadFonts fonts={fonts}>
@@ -78,14 +86,30 @@ const Main: React.FC<MainProps> = ({
           ...getCSSVariables({ colors, fonts, roundness: 1 }),
         }}
       >
-        {/* change the name of your music file in the public folder to match `music.mp3` */}
-        <Audio src={staticFile('music.mp3')} volume={audioVolume} />
+        {/* Conditionally render audio tracks based on current frame */}
+        {frame >= startFrames[0] && (
+          <Audio src={staticFile('announce_1.mp3')} volume={audioVolume} />
+        )}
+        {frame >= startFrames[1] && (
+          <Audio src={staticFile('announce_2.mp3')} volume={audioVolume} />
+        )}
+        {frame >= startFrames[2] && (
+          <Audio src={staticFile('announce_3.mp3')} volume={audioVolume} />
+        )}
+        {frame >= startFrames[3] && (
+          <Audio src={staticFile('announce_4.mp3')} volume={audioVolume} />
+        )}
+        {frame >= startFrames[4] && (
+          <Audio src={staticFile('announce_5.mp3')} volume={audioVolume} />
+        )}
+        {frame >= startFrames[5] && (
+          <Audio src={staticFile('announce_6.mp3')} volume={audioVolume} />
+        )}
 
         <TransitionSeries>
           <TransitionSeries.Sequence durationInFrames={scene1Duration}>
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
-
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-right' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
@@ -94,7 +118,6 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence durationInFrames={scene2Duration}>
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
-
           <TransitionSeries.Transition
             presentation={customCenterPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
@@ -103,7 +126,6 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence durationInFrames={scene3Duration}>
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
-
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
@@ -112,7 +134,6 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence durationInFrames={scene4Duration}>
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
-
           <TransitionSeries.Transition
             presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
@@ -121,7 +142,6 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence durationInFrames={scene5Duration}>
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
-
           <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}

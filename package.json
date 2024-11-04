@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "My VERTEX video by Remotion",
   "scripts": {
-    "start": "remotion studio --ipv4",
-    "build": "remotion render Vertex out/result.mp4 --concurrency=4 --timeout=600000",
+    "start": "remotion studio",
+    "build": "remotion render Vertex out/result.mp4",
+    "build2": "remotion render Vertex out/result.mp4 --concurrency=4 --timeout=600000",
     "upgrade": "remotion upgrade",
     "test": "eslint src --ext ts,tsx,js,jsx && tsc"
   },
