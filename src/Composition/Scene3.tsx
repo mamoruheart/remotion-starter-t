@@ -10,6 +10,8 @@ import { colorVar } from '../lib/helpers';
 export const scene3Schema = z.object({
   logo: z.string(),
   img: z.string(),
+  title1: z.string(),
+  title2: z.string(),
 });
 
 type Scene3Props = z.infer<typeof scene3Schema> & { background: BackgroundProps };

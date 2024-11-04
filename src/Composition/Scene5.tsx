@@ -10,6 +10,7 @@ import { WIDTH } from '../lib/consts';
 export const scene5Schema = z.object({
   logo: z.string(),
   img: z.string(),
+  title: z.string(),
 });
 
 type Scene5Props = z.infer<typeof scene5Schema> & { background: BackgroundProps };

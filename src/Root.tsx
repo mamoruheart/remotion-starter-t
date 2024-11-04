@@ -12,6 +12,9 @@ export const RemotionRoot: React.FC = () => {
     scene4: 4,
     scene5: 6,
     scene6: 3,
+    /**
+     * total sum should be 30...
+     */
   };
   const cW = 1920;
   const cH = 1080;
@@ -70,31 +73,40 @@ export const RemotionRoot: React.FC = () => {
           scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
             logo: staticFile('logo_ama.png'),
-            title: 'Hello VERTEX',
+            title: 'Celebrate 100 years of rights, riding, and racing!',
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
+            title:
+              'Be part of the thousands riders who trust us to safeguard the future of motorcycling',
           },
           scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
+            title1: 'Your right to ride is under threat.',
+            title2: 'Without support, the future of motorcycling may be at risk',
           },
           scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
+            title: 'Join us to protect your riding freedom and enjoy exclusive benefits',
           },
           scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
+            title:
+              'Get access to AMA-sanctioned tours, races, and rallies, plus discounts and American Motorcyclist magazine',
           },
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama.png'),
+            title1: 'Join the AMA today!',
+            title2: '(800) AMA-JOIN',
           },
         }}
       />
@@ -131,31 +143,40 @@ export const RemotionRoot: React.FC = () => {
           scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
             logo: staticFile('logo_ama.png'),
-            title: 'Hello VERTEX',
+            title: 'Celebrate 100 years of rights, riding, and racing!',
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
+            title:
+              'Be part of the thousands riders who trust us to safeguard the future of motorcycling',
           },
           scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
+            title1: 'Your right to ride is under threat.',
+            title2: 'Without support, the future of motorcycling may be at risk',
           },
           scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
+            title: 'Join us to protect your riding freedom and enjoy exclusive benefits',
           },
           scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
             logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
+            title:
+              'Get access to AMA-sanctioned tours, races, and rallies, plus discounts and American Motorcyclist magazine',
           },
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama.png'),
+            title1: 'Join the AMA today!',
+            title2: '(800) AMA-JOIN',
           },
         }}
       />
