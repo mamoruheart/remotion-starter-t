@@ -55,32 +55,32 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: cTransDuration,
           scene1Duration: 150,
           scene1Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             title: 'Hello VERTEX',
           },
           scene2Duration: 180,
           scene2Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
           },
           scene3Duration: 180,
           scene3Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
           },
           scene4Duration: 180,
           scene4Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
           },
           scene5Duration: 180,
           scene5Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
           },
           scene6Duration: 180,
           scene6Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
           },
         }}
       />
@@ -109,32 +109,32 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: cTransDuration,
           scene1Duration: 150,
           scene1Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             title: 'Hello VERTEX',
           },
           scene2Duration: 180,
           scene2Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_1.jpg'),
           },
           scene3Duration: 180,
           scene3Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_2.jpg'),
           },
           scene4Duration: 180,
           scene4Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_3.jpg'),
           },
           scene5Duration: 180,
           scene5Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
             img: staticFile('media_4.jpg'),
           },
           scene6Duration: 180,
           scene6Props: {
-            logo: staticFile('logo.png'),
+            logo: staticFile('logo_ama.png'),
           },
         }}
       />
