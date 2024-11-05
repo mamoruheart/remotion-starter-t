@@ -1,13 +1,15 @@
 import { Img, interpolate, useCurrentFrame } from 'remotion';
 
-interface ImageProps {
+interface Image1Props {
   img: string;
   radius: number;
   strokeWidth: number;
   strokeColor: string;
+  label1: string;
+  label2: string;
 }
 
-const Image = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
+const Image1 = ({ img, radius, strokeWidth, strokeColor, label1, label2 }: Image1Props) => {
   const frame = useCurrentFrame();
   const circumference = 2 * Math.PI * radius;
   const segmentLength = circumference / 6;
@@ -18,7 +20,8 @@ const Image = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
     extrapolateRight: 'clamp',
     extrapolateLeft: 'clamp',
   });
-  const imgTop = interpolate(frame, [40, 55], [radius * 2, -100], {
+
+  const imgTop = interpolate(frame, [40, 55], [radius * 2, 80], {
     extrapolateRight: 'clamp',
     extrapolateLeft: 'clamp',
   });
@@ -48,10 +51,24 @@ const Image = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
           src={img}
           style={{
             position: 'absolute',
-            width: radius * 4,
+            width: radius * 1.4,
             top: imgTop,
           }}
         />
+        <h2
+          style={{
+            position: 'absolute',
+            bottom: '8rem',
+            color: 'white',
+            fontSize: '2.7rem',
+            margin: 0,
+            textAlign: 'center',
+          }}
+        >
+          {label1}
+          <br />
+          {label2}
+        </h2>
       </div>
       <svg
         width={radius * 2 + strokeWidth * 2}
@@ -76,4 +93,4 @@ const Image = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
   );
 };
 
-export default Image;
+export default Image1;

@@ -73,8 +73,9 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: cTransDuration,
           scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
-            logo: staticFile('logo_ama.png'),
-            title: 'Celebrate 100 years of rights, riding, and racing!',
+            logo: staticFile('logo_ama_2.png'),
+            label1: 'Celebrate 100 years of rights,',
+            label2: 'riding, and racing!',
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
@@ -143,8 +144,9 @@ export const RemotionRoot: React.FC = () => {
           transitionDuration: cTransDuration,
           scene1Duration: cFps * sceneDurationsInSec.scene1,
           scene1Props: {
-            logo: staticFile('logo_ama.png'),
-            title: 'Celebrate 100 years of rights, riding, and racing!',
+            logo: staticFile('logo_ama_2.png'),
+            label1: 'Celebrate 100 years of rights,',
+            label2: 'riding, and racing!',
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
