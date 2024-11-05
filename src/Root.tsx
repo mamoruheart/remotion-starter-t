@@ -20,16 +20,17 @@ export const RemotionRoot: React.FC = () => {
   const cH = 1080;
   const cAudVol = 0.5;
   const colorsProp = {
-    background: '#000000',
-    backgroundText: '#FFFFFF',
+    primary: '#ff0000',
+    primaryText: '#ffffff',
+    secondary: '#5118db',
+    secondaryText: '#ff0000',
+    accent: '#ffff08',
+    accentText: '#ff0000',
+    background: '#076cc9',
+    backgroundText: '#ffffff',
     black: '#000000',
-    white: '#FFFFFF',
-    primary: '#f00',
-    primaryText: '#FFFFFF',
-    secondary: '#5118DB',
-    secondaryText: '#f00',
-    accent: '#FFFF08',
-    accentText: '#f00',
+    white: '#ffffff',
+    amaRed: '#bd0d2d',
   };
   const cBgType = 'crosses';
   const cBgBackground = 'background';

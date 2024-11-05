@@ -7,18 +7,27 @@ export const interpolateClamp = (
   inputRange: readonly number[],
   outputRange: readonly number[],
   easing?: EasingFunction
-) =>
-  interpolate(frame, inputRange, outputRange, {
+) => {
+  return interpolate(frame, inputRange, outputRange, {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
     easing,
   });
+};
 
-export const interpolateSpring = (spring: number, outputRange: readonly number[]) =>
-  interpolate(spring, [0, 1], outputRange, { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+export const interpolateSpring = (spring: number, outputRange: readonly number[]) => {
+  return interpolate(spring, [0, 1], outputRange, {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+};
 
 // Just a spring function with a better config and no need to pass the FPS.
-const config = { damping: 13, mass: 0.6, stiffness: 65 };
+const config = {
+  damping: 13,
+  mass: 0.6,
+  stiffness: 65,
+};
 
 export const defaultSpring = (props: {
   frame: number;
@@ -27,18 +36,29 @@ export const defaultSpring = (props: {
   durationInFrames?: number;
   from?: number;
   to?: number;
-}) => spring({ fps: 30, config, ...props });
+}) => {
+  return spring({
+    fps: 30,
+    config,
+    ...props,
+  });
+};
 
 export const typedObjectKeys = <T extends object>(object: T) => {
   return Object.keys(object) as (keyof T)[];
 };
 
-export const borderRadiusVar = (value: `${number}%` | `${number}px`) =>
-  `calc(${value} * var(--roundness))`;
+export const borderRadiusVar = (value: `${number}%` | `${number}px`) => {
+  return `calc(${value} * var(--roundness))`;
+};
 
-export const colorVar = (color: Color) => (color.startsWith('#') ? color : `var(--color-${color})`);
+export const colorVar = (color: Color) => {
+  return color.startsWith('#') ? color : `var(--color-${color})`;
+};
 
-export const fontVar = (font: Font) => `var(--font-${font})`;
+export const fontVar = (font: Font) => {
+  return `var(--font-${font})`;
+};
 
 export const formatFontName = (fontName: string) => {
   return (
@@ -50,7 +70,9 @@ export const formatFontName = (fontName: string) => {
   );
 };
 
-export const quote = (text: string) => `'${text}'`;
+export const quote = (text: string) => {
+  return `'${text}'`;
+};
 
 export const getCSSVariables = ({
   colors,
@@ -64,10 +86,16 @@ export const getCSSVariables = ({
       formatFontName(value as string),
     ]),
   ];
-  if (roundness) vars.push(['--roundness', roundness.toString()]);
+  if (roundness) {
+    vars.push(['--roundness', roundness.toString()]);
+  }
   return Object.fromEntries(vars);
 };
 
-export const isUrl = (src: string) => src.startsWith('http') || src.startsWith('/');
+export const isUrl = (src: string) => {
+  return src.startsWith('http') || src.startsWith('/');
+};
 
-export const getRandomString = (seed: string) => random(seed).toString(36).substring(2, 15);
+export const getRandomString = (seed: string) => {
+  return random(seed).toString(36).substring(2, 15);
+};

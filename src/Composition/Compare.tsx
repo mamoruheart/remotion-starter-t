@@ -8,9 +8,6 @@ export const Compare: React.FC = (props: any) => {
   const fileName = 'TEMPLATE_133';
 
   return (
-    /**
-     * insert Name of your video from `public/examples/` folder
-     */
     <CompareWithVideo example={staticFile(`/examples/${fileName}.mp4`)}>
       <Main {...props} />
     </CompareWithVideo>

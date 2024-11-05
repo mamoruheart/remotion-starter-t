@@ -30,7 +30,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
         <div>
           <Logo logo={props.logo} radius={180} />
         </div>
-        <Image img={props.img} radius={400} strokeColor={colorVar('secondary')} strokeWidth={50} />
+        <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
       </div>
     </AbsoluteFill>
   );

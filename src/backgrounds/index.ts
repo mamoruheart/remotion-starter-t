@@ -8,13 +8,13 @@ import { StaticBackground } from './_/Static';
 import { CrossesBackground } from './_/Crosses';
 
 export const BACKGROUNDS = [
-  // Add new background here
   LinesBackground,
   SquaresBackground,
   ImageBackground,
   StaticBackground,
   RealEstateBackground,
   CrossesBackground,
+  // Add new background here
 ];
 
 type BackgroundSchema = (typeof BACKGROUNDS)[number]['schema'];

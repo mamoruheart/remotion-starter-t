@@ -23,6 +23,7 @@ export const Colors = z
     backgroundText: z.string(),
     black: z.string(),
     white: z.string(),
+    amaRed: z.string(),
   })
   .describe('Hex color pallete for the video');
 
@@ -37,6 +38,7 @@ export const ColorEnum = z.enum([
   'backgroundText',
   'black',
   'white',
+  'amaRed',
 ]);
 
 export const ColorHex = z.custom<`#${string}`>((val: any) => /^#[0-9A-F]{6}$/i.test(val));

@@ -8,7 +8,7 @@ export const schema = z.object({});
 
 type Props = z.infer<typeof schema> & { background: BackgroundProps };
 
-const Scene: React.FC<Props> = (props) => {
+const MinScene: React.FC<Props> = (props) => {
   return (
     <AbsoluteFill>
       {/* The background component is always the same setup like this.
@@ -20,4 +20,4 @@ const Scene: React.FC<Props> = (props) => {
   );
 };
 
-export default Scene;
+export default MinScene;
