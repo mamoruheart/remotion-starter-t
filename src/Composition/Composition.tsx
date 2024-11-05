@@ -10,11 +10,11 @@ import Scene5, { scene5Schema } from './Scene5';
 import Scene6, { scene6Schema } from './Scene6';
 import { LoadFonts } from '../lib/LoadFonts';
 import { getCSSVariables } from '../lib/helpers';
+import { HEIGHT, WIDTH } from '../lib/consts';
 import { Colors, Fonts } from '../types';
 import { BackgroundProps } from '../backgrounds';
 import { WideSlidePresentation } from '../transitions/WideSlidePresentation';
 import { customCenterPresentation } from '../transitions/CenterPresentation';
-import { HEIGHT, WIDTH } from '../lib/consts';
 import { customL2RPresentation } from '../transitions/Left2RightPresentation';
 
 export const MainSchema = z.object({
@@ -111,15 +111,19 @@ const Main: React.FC<MainProps> = ({
         }}
       >
         <TransitionSeries>
-          {/* scene 1 */}
+          {/* Scene 1 */}
           <TransitionSeries.Sequence offset={0} durationInFrames={scene1Duration}>
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
-          <TransitionSeries.Transition
+          {/* <TransitionSeries.Transition
             presentation={WideSlidePresentation({ direction: 'from-right' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
+          /> */}
+          <TransitionSeries.Transition
+            presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
+            timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-          {/* scene 2 */}
+          {/* Scene 2 */}
           <TransitionSeries.Sequence offset={30} durationInFrames={scene2Duration}>
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
@@ -127,7 +131,7 @@ const Main: React.FC<MainProps> = ({
             presentation={customCenterPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-          {/* scene 3 */}
+          {/* Scene 3 */}
           <TransitionSeries.Sequence offset={30} durationInFrames={scene3Duration}>
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
@@ -135,7 +139,7 @@ const Main: React.FC<MainProps> = ({
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-          {/* scene 4 */}
+          {/* Scene 4 */}
           <TransitionSeries.Sequence offset={30} durationInFrames={scene4Duration}>
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
@@ -143,7 +147,7 @@ const Main: React.FC<MainProps> = ({
             presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-          {/* scene 5 */}
+          {/* Scene 5 */}
           <TransitionSeries.Sequence offset={30} durationInFrames={scene5Duration}>
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
@@ -151,7 +155,7 @@ const Main: React.FC<MainProps> = ({
             presentation={WideSlidePresentation({ direction: 'from-bottom' })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
-          {/* scene 6 */}
+          {/* Scene 6 */}
           <TransitionSeries.Sequence offset={30} durationInFrames={scene6Duration}>
             <Scene6 {...scene6Props} background={background} />
           </TransitionSeries.Sequence>
