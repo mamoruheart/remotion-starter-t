@@ -16,7 +16,10 @@ export const RealEstateBackground = defineBackground({
     stroke: Color,
   }),
   component: ({ background, stroke }) => {
-    const props = { bgColor: colorVar(background), strokeColor: colorVar(stroke) };
+    const props = {
+      bgColor: colorVar(background),
+      strokeColor: colorVar(stroke),
+    };
 
     return (
       <AbsoluteFill
@@ -458,7 +461,7 @@ const Element6 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
       extrapolateRight: 'clamp',
     });
     dashArrayString = [dashArray, 3000 - dashArray].map((num) => num * 1).join(' ');
-    // ?
+    // ???
     dashArrayString = [1800, 1800].map((num) => num * 1).join(' ');
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');
@@ -591,7 +594,7 @@ const Element8 = ({ bgColor, strokeColor }: { bgColor: string; strokeColor: stri
       extrapolateRight: 'clamp',
     });
     dashArrayString = [dashArray, 2400 - dashArray].map((num) => num * 1).join(' ');
-    // ?
+    // ???
     dashArrayString = [1200, 2400 - 1200].map((num) => num * 1).join(' ');
   } else {
     dashArrayString = [2100, 900].map((num) => num * 1).join(' ');

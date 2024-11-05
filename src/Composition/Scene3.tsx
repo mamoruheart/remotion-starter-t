@@ -20,7 +20,6 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   return (
     <AbsoluteFill>
       <Background {...props.background} />
-
       <div
         style={{
           display: 'flex',
@@ -29,7 +28,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
           justifyContent: 'space-between',
         }}
       >
-        <Image img={props.img} radius={400} strokeColor={colorVar('secondary')} strokeWidth={50} />
+        <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
         <div style={{ position: 'relative' }}>
           <Logo logo={props.logo} radius={180} direction="from-right" />
         </div>

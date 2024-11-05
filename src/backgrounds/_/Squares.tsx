@@ -21,7 +21,13 @@ export const SquaresBackground = defineBackground({
     const grid = staticFile('/backgrounds/grid.webp');
 
     return (
-      <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>
+      <AbsoluteFill
+        style={{
+          overflow: 'hidden',
+          background: colorVar(background),
+          ...style,
+        }}
+      >
         <RandomFlash seed="1" />
         <RandomFlash seed="2" />
         <div

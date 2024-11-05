@@ -24,8 +24,20 @@ export const CompareWithVideo = ({
   children: ReactNode;
 }) => {
   return (
-    <AbsoluteFill style={{ overflow: 'visible', width: '100%', height: '100%' }}>
-      <AbsoluteFill style={{ width: '1920px', height: '1080px', position: 'absolute' }}>
+    <AbsoluteFill
+      style={{
+        overflow: 'visible',
+        width: '100%',
+        height: '100%',
+      }}
+    >
+      <AbsoluteFill
+        style={{
+          width: '1920px',
+          height: '1080px',
+          position: 'absolute',
+        }}
+      >
         {children}
       </AbsoluteFill>
       {COMPARE && (

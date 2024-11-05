@@ -34,7 +34,7 @@ export const RemotionRoot: React.FC = () => {
   };
   const cBgType = 'crosses';
   const cBgBackground = 'background';
-  const cBgStroke = 'black';
+  const cBgStroke = 'amaRed';
   const cFontPrimary = 'Montserrat';
   const cFontSecondary = 'Abel';
   const cTransDuration = 30;

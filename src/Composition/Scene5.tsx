@@ -6,6 +6,7 @@ import Logo from '../components/Logo';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
 import { WIDTH } from '../lib/consts';
+import { colorVar } from '../lib/helpers';
 
 export const scene5Schema = z.object({
   logo: z.string(),
@@ -32,7 +33,7 @@ const Scene5: React.FC<Scene5Props> = (props) => {
           <div style={{ position: 'relative' }}>
             <Logo logo={props.logo} radius={180} direction="from-left" />
           </div>
-          <Image img={props.img} radius={400} strokeColor="#5118DB" strokeWidth={50} />
+          <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
         </div>
       </Sequence>
     </AbsoluteFill>

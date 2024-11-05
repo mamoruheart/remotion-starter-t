@@ -9,7 +9,9 @@ export const TextCharsFromRightToLeft = ({ text }: { text: string }) => {
     <>
       {text.split('').map((char, i) => {
         const spring = defaultSpring({ frame, delay: 6 + i * 1.1, durationInFrames: 20 });
-        if (char === '\n') return <br key={i} />;
+        if (char === '\n') {
+          return <br key={i} />;
+        }
         return (
           <span
             key={i}

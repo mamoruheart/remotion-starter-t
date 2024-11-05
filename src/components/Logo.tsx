@@ -24,9 +24,7 @@ const describeArc = (
 ) => {
   const start = polarToCartesian(x, y, radius, endAngle);
   const end = polarToCartesian(x, y, radius, startAngle);
-
   const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-
   const d = [
     'M',
     start.x,

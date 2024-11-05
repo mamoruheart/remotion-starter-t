@@ -73,6 +73,7 @@ const DiagonalSliceImage: React.FC<DiagonalSliceImageProps> = ({ src, style, pro
           position: 'absolute',
         }}
       />
+
       <Img
         src={src}
         style={{

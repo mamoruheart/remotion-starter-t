@@ -9,6 +9,14 @@ export const StaticBackground = defineBackground({
   description: 'Just a background color',
   schema: z.object({ background: Color }),
   component: ({ style, background }) => {
-    return <AbsoluteFill style={{ overflow: 'hidden', background, ...style }} />;
+    return (
+      <AbsoluteFill
+        style={{
+          overflow: 'hidden',
+          background,
+          ...style,
+        }}
+      />
+    );
   },
 });

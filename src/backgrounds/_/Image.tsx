@@ -14,7 +14,13 @@ export const ImageBackground = defineBackground({
   }),
   component: ({ style, background, image }) => {
     return (
-      <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>
+      <AbsoluteFill
+        style={{
+          overflow: 'hidden',
+          background: colorVar(background),
+          ...style,
+        }}
+      >
         <Img src={image} style={{ width: '100%', height: '100%' }} />
       </AbsoluteFill>
     );

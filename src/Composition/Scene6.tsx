@@ -17,7 +17,13 @@ type Scene6Props = z.infer<typeof scene6Schema> & { background: BackgroundProps 
 
 const Scene6: React.FC<Scene6Props> = (props) => {
   return (
-    <AbsoluteFill style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <AbsoluteFill
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Background {...props.background} />
       <div
         style={{
@@ -38,7 +44,7 @@ const Scene6: React.FC<Scene6Props> = (props) => {
             left: 0,
           }}
         >
-          <Circle radius={200} strokeColor={colorVar('secondary')} strokeWidth={40} />
+          <Circle radius={200} strokeColor={colorVar('amaRed')} strokeWidth={40} />
         </div>
         <div
           style={{
@@ -47,7 +53,7 @@ const Scene6: React.FC<Scene6Props> = (props) => {
             bottom: 0,
           }}
         >
-          <Circle radius={200} strokeColor={colorVar('secondary')} strokeWidth={40} />
+          <Circle radius={200} strokeColor={colorVar('amaRed')} strokeWidth={40} />
         </div>
       </div>
     </AbsoluteFill>

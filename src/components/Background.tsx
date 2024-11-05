@@ -8,6 +8,8 @@ export const Background = (props: BackgroundProps & { style?: CSSProperties }) =
     [props.type]
   );
 
-  if (!Component) return null;
+  if (!Component) {
+    return null;
+  }
   return <Component {...(props as any)} style={props.style} />;
 };

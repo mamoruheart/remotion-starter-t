@@ -35,7 +35,13 @@ export const CrossesBackground = defineBackground({
     }
 
     return (
-      <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>
+      <AbsoluteFill
+        style={{
+          overflow: 'hidden',
+          background: colorVar(background),
+          ...style,
+        }}
+      >
         {crossArray}
       </AbsoluteFill>
     );

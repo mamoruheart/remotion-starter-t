@@ -30,7 +30,13 @@ export const LinesBackground = defineBackground({
     const xy = new Array(12).fill(0).map((_, i) => ({ x: getX(i), y: getY(i) }));
 
     return (
-      <AbsoluteFill style={{ overflow: 'hidden', background: colorVar(background), ...style }}>
+      <AbsoluteFill
+        style={{
+          overflow: 'hidden',
+          background: colorVar(background),
+          ...style,
+        }}
+      >
         <svg viewBox="0 0 1000 1000" style={{ width: '100%', height: '100%' }}>
           {new Array(60).fill(0).map((_, i) => {
             const offset = -1400 + i * 50;
