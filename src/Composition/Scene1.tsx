@@ -1,4 +1,4 @@
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
 import { z } from 'zod';
 
 import Image1 from '../components/Image1';
@@ -15,8 +15,20 @@ export const scene1Schema = z.object({
 type Scene1Props = z.infer<typeof scene1Schema> & { background: BackgroundProps };
 
 const Scene1: React.FC<Scene1Props> = (props) => {
+  const frame = useCurrentFrame();
+
+  const opacity = interpolate(frame, [0, 30], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
   return (
-    <AbsoluteFill>
+    <AbsoluteFill
+      style={{
+        backgroundColor: 'black',
+        opacity,
+      }}
+    >
       <Background {...props.background} />
       <div
         style={{
