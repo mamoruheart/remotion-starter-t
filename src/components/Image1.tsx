@@ -61,7 +61,7 @@ const Image1 = ({ img, radius, strokeWidth, strokeColor, label1, label2 }: Image
         />
         <h2
           style={{
-            position: 'absolute',
+            position: 'fixed',
             bottom: '8rem',
             color: 'white',
             fontSize: '2.7rem',

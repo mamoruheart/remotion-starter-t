@@ -1,4 +1,4 @@
-import { AbsoluteFill, Img } from 'remotion';
+import { AbsoluteFill, Img, interpolate, useCurrentFrame } from 'remotion';
 import { z } from 'zod';
 
 import Circle from '../components/Circle';
@@ -16,12 +16,20 @@ export const scene6Schema = z.object({
 type Scene6Props = z.infer<typeof scene6Schema> & { background: BackgroundProps };
 
 const Scene6: React.FC<Scene6Props> = (props) => {
+  const frame = useCurrentFrame();
+
+  const opacity = interpolate(frame, [0, 90, 120], [1, 1, 0], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
+
   return (
     <AbsoluteFill
       style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        opacity,
       }}
     >
       <Background {...props.background} />

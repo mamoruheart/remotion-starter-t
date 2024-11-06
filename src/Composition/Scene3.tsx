@@ -2,7 +2,7 @@ import { AbsoluteFill } from 'remotion';
 import { z } from 'zod';
 
 import Logo from '../components/Logo';
-import Image from '../components/Image';
+import Image3 from '../components/Image3';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
 import { colorVar } from '../lib/helpers';
@@ -28,7 +28,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
           justifyContent: 'space-between',
         }}
       >
-        <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+        <Image3 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
         <div style={{ position: 'relative' }}>
           <Logo logo={props.logo} radius={180} direction="from-right" />
         </div>

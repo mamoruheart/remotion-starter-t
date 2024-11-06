@@ -1,7 +1,7 @@
 import { AbsoluteFill, Sequence } from 'remotion';
 import { z } from 'zod';
 
-import Image from '../components/Image';
+import Image4 from '../components/Image4';
 import Logo from '../components/Logo';
 import { Background } from '../components/Background';
 import { WIDTH } from '../lib/consts';
@@ -32,7 +32,7 @@ const Scene4: React.FC<Scene4Props> = (props) => {
             width: WIDTH,
           }}
         >
-          <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+          <Image4 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
           <div style={{ position: 'relative' }}>
             <Logo logo={props.logo} radius={180} direction="from-right" />
           </div>

@@ -1,7 +1,7 @@
 import { AbsoluteFill, Sequence } from 'remotion';
 import { z } from 'zod';
 
-import Image from '../components/Image';
+import Image5 from '../components/Image5';
 import Logo from '../components/Logo';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
@@ -33,7 +33,7 @@ const Scene5: React.FC<Scene5Props> = (props) => {
           <div style={{ position: 'relative' }}>
             <Logo logo={props.logo} radius={180} direction="from-left" />
           </div>
-          <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+          <Image5 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
         </div>
       </Sequence>
     </AbsoluteFill>

@@ -13,9 +13,10 @@ import { getCSSVariables } from '../lib/helpers';
 import { HEIGHT, WIDTH } from '../lib/consts';
 import { Colors, Fonts } from '../types';
 import { BackgroundProps } from '../backgrounds';
-import { WideSlidePresentation } from '../transitions/WideSlidePresentation';
 import { customCenterPresentation } from '../transitions/CenterPresentation';
 import { customL2RPresentation } from '../transitions/Left2RightPresentation';
+import { customR2LPresentation } from '../transitions/Right2LeftPresentation';
+import { customPresentation } from '../transitions/CustomPresentation';
 
 export const MainSchema = z.object({
   audioVolume: z.number(),
@@ -115,48 +116,68 @@ const Main: React.FC<MainProps> = ({
           <TransitionSeries.Sequence offset={0} durationInFrames={scene1Duration}>
             <Scene1 {...scene1Props} background={background} />
           </TransitionSeries.Sequence>
-          {/* <TransitionSeries.Transition
-            presentation={WideSlidePresentation({ direction: 'from-right' })}
-            timing={linearTiming({ durationInFrames: transitionDuration })}
-          /> */}
           <TransitionSeries.Transition
-            presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
-            timing={linearTiming({ durationInFrames: transitionDuration })}
+            presentation={customL2RPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+            })}
+            timing={linearTiming({
+              durationInFrames: transitionDuration,
+            })}
           />
           {/* Scene 2 */}
-          <TransitionSeries.Sequence offset={30} durationInFrames={scene2Duration}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene2Duration + 30}>
             <Scene2 {...scene2Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={customCenterPresentation({ height: HEIGHT, width: WIDTH })}
-            timing={linearTiming({ durationInFrames: transitionDuration })}
+            presentation={customR2LPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+            })}
+            timing={linearTiming({
+              durationInFrames: transitionDuration,
+            })}
           />
           {/* Scene 3 */}
-          <TransitionSeries.Sequence offset={30} durationInFrames={scene3Duration}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene3Duration + 20}>
             <Scene3 {...scene3Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={WideSlidePresentation({ direction: 'from-bottom' })}
+            presentation={customCenterPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+            })}
             timing={linearTiming({ durationInFrames: transitionDuration })}
           />
           {/* Scene 4 */}
-          <TransitionSeries.Sequence offset={30} durationInFrames={scene4Duration}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene4Duration + 50}>
             <Scene4 {...scene4Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={customL2RPresentation({ height: HEIGHT, width: WIDTH })}
-            timing={linearTiming({ durationInFrames: transitionDuration })}
+            presentation={customL2RPresentation({
+              height: HEIGHT,
+              width: WIDTH,
+            })}
+            timing={linearTiming({
+              durationInFrames: transitionDuration,
+            })}
           />
           {/* Scene 5 */}
-          <TransitionSeries.Sequence offset={30} durationInFrames={scene5Duration}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene5Duration + 50}>
             <Scene5 {...scene5Props} background={background} />
           </TransitionSeries.Sequence>
           <TransitionSeries.Transition
-            presentation={WideSlidePresentation({ direction: 'from-bottom' })}
-            timing={linearTiming({ durationInFrames: transitionDuration })}
+            presentation={customPresentation({
+              width: 1920,
+              height: 1080,
+              rotation: 45,
+            })}
+            timing={linearTiming({
+              durationInFrames: transitionDuration,
+            })}
           />
           {/* Scene 6 */}
-          <TransitionSeries.Sequence offset={30} durationInFrames={scene6Duration}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene6Duration + 30}>
             <Scene6 {...scene6Props} background={background} />
           </TransitionSeries.Sequence>
         </TransitionSeries>

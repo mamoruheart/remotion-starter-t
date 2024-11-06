@@ -6,15 +6,12 @@ import { Compare } from './Composition/Compare';
 export const RemotionRoot: React.FC = () => {
   const cFps = 30;
   const sceneDurationsInSec = {
-    scene1: 5,
-    scene2: 4,
-    scene3: 6,
-    scene4: 4,
-    scene5: 6,
-    scene6: 3,
-    /**
-     * total sum should be 30...
-     */
+    scene1: Math.ceil(5.09),
+    scene2: Math.ceil(4.6),
+    scene3: Math.ceil(6.03),
+    scene4: Math.ceil(4.26),
+    scene5: Math.ceil(6.5),
+    scene6: Math.ceil(3.42),
   };
   const cW = 1920;
   const cH = 1080;
@@ -37,7 +34,7 @@ export const RemotionRoot: React.FC = () => {
   const cBgStroke = 'amaRed';
   const cFontPrimary = 'Montserrat';
   const cFontSecondary = 'Abel';
-  const cTransDuration = 30;
+  const cTransDuration = cFps * 1;
 
   return (
     <>
@@ -79,34 +76,34 @@ export const RemotionRoot: React.FC = () => {
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_1.jpg'),
             title:
               'Be part of the thousands riders who trust us to safeguard the future of motorcycling',
           },
           scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_2.jpg'),
             title1: 'Your right to ride is under threat.',
             title2: 'Without support, the future of motorcycling may be at risk',
           },
           scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_3.jpg'),
             title: 'Join us to protect your riding freedom and enjoy exclusive benefits',
           },
           scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_4.jpg'),
             title:
               'Get access to AMA-sanctioned tours, races, and rallies, plus discounts and American Motorcyclist magazine',
           },
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             title1: 'Join the AMA today!',
             title2: '(800) AMA-JOIN',
           },
@@ -150,34 +147,34 @@ export const RemotionRoot: React.FC = () => {
           },
           scene2Duration: cFps * sceneDurationsInSec.scene2,
           scene2Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_1.jpg'),
             title:
               'Be part of the thousands riders who trust us to safeguard the future of motorcycling',
           },
           scene3Duration: cFps * sceneDurationsInSec.scene3,
           scene3Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_2.jpg'),
             title1: 'Your right to ride is under threat.',
             title2: 'Without support, the future of motorcycling may be at risk',
           },
           scene4Duration: cFps * sceneDurationsInSec.scene4,
           scene4Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_3.jpg'),
             title: 'Join us to protect your riding freedom and enjoy exclusive benefits',
           },
           scene5Duration: cFps * sceneDurationsInSec.scene5,
           scene5Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             img: staticFile('media_4.jpg'),
             title:
               'Get access to AMA-sanctioned tours, races, and rallies, plus discounts and American Motorcyclist magazine',
           },
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
-            logo: staticFile('logo_ama.png'),
+            logo: staticFile('logo_ama_2.png'),
             title1: 'Join the AMA today!',
             title2: '(800) AMA-JOIN',
           },

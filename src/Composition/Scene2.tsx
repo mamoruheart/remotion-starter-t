@@ -1,7 +1,7 @@
 import { AbsoluteFill } from 'remotion';
 import { z } from 'zod';
 
-import Image from '../components/Image';
+import Image2 from '../components/Image2';
 import Logo from '../components/Logo';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
@@ -28,9 +28,15 @@ const Scene2: React.FC<Scene2Props> = (props) => {
         }}
       >
         <div>
-          <Logo logo={props.logo} radius={180} direction="from-right" />
+          <Logo logo={props.logo} radius={180} direction="from-left" />
         </div>
-        <Image img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+        <Image2
+          img={props.img}
+          radius={400}
+          strokeColor={colorVar('amaRed')}
+          strokeWidth={50}
+          title={props.title}
+        />
       </div>
     </AbsoluteFill>
   );

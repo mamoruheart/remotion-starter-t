@@ -22,10 +22,6 @@ const rectWidenPresentation: React.FC<
     width: passedProps.width * 4,
   });
 
-  // const { path: path2 } = makeRect({
-  //   height: hei + 200 * 2,
-  //   width: passedProps.width * 2,
-  // });
   const boundingBox = getBoundingBox(path);
   const translatedPath = translatePath(
     path,
@@ -33,11 +29,6 @@ const rectWidenPresentation: React.FC<
     passedProps.height / 2 - boundingBox.height / 2
   );
 
-  // const translatedPath2 = translatePath(
-  //   path2,
-  //   passedProps.width / 2 - boundingBox.width / 2,
-  //   passedProps.height / 2 - boundingBox.height / 2
-  // );
   const [clipId] = useState(() => String(random(null)));
   const style: React.CSSProperties = useMemo(() => {
     return {
