@@ -177,7 +177,7 @@ const Main: React.FC<MainProps> = ({
             })}
           />
           {/* Scene 6 */}
-          <TransitionSeries.Sequence offset={0} durationInFrames={scene6Duration + 30}>
+          <TransitionSeries.Sequence offset={0} durationInFrames={scene6Duration * 2}>
             <Scene6 {...scene6Props} background={background} />
           </TransitionSeries.Sequence>
         </TransitionSeries>

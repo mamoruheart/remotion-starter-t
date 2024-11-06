@@ -1,16 +1,15 @@
-import { AbsoluteFill, Img, interpolate, useCurrentFrame } from 'remotion';
+import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
 import { z } from 'zod';
 
-import Circle from '../components/Circle';
-import { BackgroundProps } from '../backgrounds';
+import Image6 from '../components/Image6';
 import { Background } from '../components/Background';
-import { HEIGHT, WIDTH } from '../lib/consts';
+import { BackgroundProps } from '../backgrounds';
 import { colorVar } from '../lib/helpers';
 
 export const scene6Schema = z.object({
   logo: z.string(),
-  title1: z.string(),
-  title2: z.string(),
+  label1: z.string(),
+  label2: z.string(),
 });
 
 type Scene6Props = z.infer<typeof scene6Schema> & { background: BackgroundProps };
@@ -33,36 +32,23 @@ const Scene6: React.FC<Scene6Props> = (props) => {
       }}
     >
       <Background {...props.background} />
+
       <div
         style={{
-          position: 'relative',
-          width: WIDTH,
-          height: HEIGHT,
           display: 'flex',
+          height: '100%',
           justifyContent: 'center',
           alignItems: 'center',
-          overflow: 'hidden',
         }}
       >
-        <Img src={props.logo} width={500} />
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-          }}
-        >
-          <Circle radius={200} strokeColor={colorVar('amaRed')} strokeWidth={40} />
-        </div>
-        <div
-          style={{
-            position: 'absolute',
-            right: 0,
-            bottom: 0,
-          }}
-        >
-          <Circle radius={200} strokeColor={colorVar('amaRed')} strokeWidth={40} />
-        </div>
+        <Image6
+          img={props.logo}
+          radius={400}
+          strokeColor={colorVar('amaRed')}
+          strokeWidth={50}
+          label1={props.label1}
+          label2={props.label2}
+        />
       </div>
     </AbsoluteFill>
   );

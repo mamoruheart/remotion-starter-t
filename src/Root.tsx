@@ -104,8 +104,8 @@ export const RemotionRoot: React.FC = () => {
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama_2.png'),
-            title1: 'Join the AMA today!',
-            title2: '(800) AMA-JOIN',
+            label1: 'Join the AMA today!',
+            label2: '(800) AMA-JOIN',
           },
         }}
       />
@@ -175,8 +175,8 @@ export const RemotionRoot: React.FC = () => {
           scene6Duration: cFps * sceneDurationsInSec.scene6,
           scene6Props: {
             logo: staticFile('logo_ama_2.png'),
-            title1: 'Join the AMA today!',
-            title2: '(800) AMA-JOIN',
+            label1: 'Join the AMA today!',
+            label2: '(800) AMA-JOIN',
           },
         }}
       />
