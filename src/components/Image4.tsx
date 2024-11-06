@@ -40,16 +40,15 @@ const Image4 = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
           overflow: 'hidden',
           position: 'relative',
           display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          justifyContent: 'start',
         }}
       >
         <Img
           src={img}
           style={{
-            // position: 'absolute',
             width: radius * 3,
             top: imgTop,
+            objectFit: 'none',
           }}
         />
       </div>
