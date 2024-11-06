@@ -30,7 +30,11 @@ const Scene5: React.FC<Scene5Props> = (props) => {
             width: WIDTH,
           }}
         >
-          <div style={{ position: 'relative' }}>
+          <div
+            style={{
+              position: 'relative',
+            }}
+          >
             <Logo logo={props.logo} radius={180} direction="from-left" />
           </div>
           <Image5 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />

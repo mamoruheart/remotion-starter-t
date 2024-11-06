@@ -20,6 +20,7 @@ const Scene3: React.FC<Scene3Props> = (props) => {
   return (
     <AbsoluteFill>
       <Background {...props.background} />
+
       <div
         style={{
           display: 'flex',

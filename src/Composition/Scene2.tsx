@@ -2,7 +2,7 @@ import { AbsoluteFill } from 'remotion';
 import { z } from 'zod';
 
 import Image2 from '../components/Image2';
-import Logo from '../components/Logo';
+import Logo2 from '../components/Logo2';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
 import { colorVar } from '../lib/helpers';
@@ -19,6 +19,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
   return (
     <AbsoluteFill>
       <Background {...props.background} />
+
       <div
         style={{
           display: 'flex',
@@ -27,16 +28,28 @@ const Scene2: React.FC<Scene2Props> = (props) => {
           justifyContent: 'space-between',
         }}
       >
-        <div>
-          <Logo logo={props.logo} radius={180} direction="from-left" />
+        <div
+          style={{
+            position: 'absolute',
+            top: '0rem',
+            right: '0rem',
+          }}
+        >
+          <Logo2 logo={props.logo} radius={100} direction="from-right" />
         </div>
-        <Image2
-          img={props.img}
-          radius={400}
-          strokeColor={colorVar('amaRed')}
-          strokeWidth={50}
-          title={props.title}
-        />
+        <h2
+          style={{
+            color: 'white',
+            fontSize: '7rem',
+            lineHeight: '6rem',
+            zIndex: 9,
+            width: '40%',
+            margin: 0,
+          }}
+        >
+          {props.title}
+        </h2>
+        <Image2 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
       </div>
     </AbsoluteFill>
   );

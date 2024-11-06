@@ -5,10 +5,9 @@ interface ImageProps {
   radius: number;
   strokeWidth: number;
   strokeColor: string;
-  title: string;
 }
 
-const Image2 = ({ img, radius, strokeWidth, strokeColor, title }: ImageProps) => {
+const Image2 = ({ img, radius, strokeWidth, strokeColor }: ImageProps) => {
   const frame = useCurrentFrame();
   const circumference = 2 * Math.PI * radius;
   const segmentLength = circumference / 6;
@@ -33,16 +32,6 @@ const Image2 = ({ img, radius, strokeWidth, strokeColor, title }: ImageProps) =>
         transform: `scale(${scale})`,
       }}
     >
-      <h1
-        style={{
-          position: 'absolute',
-          top: '2rem',
-          left: '2rem',
-          fontSize: '4rem',
-        }}
-      >
-        {title}
-      </h1>
       <div
         style={{
           borderRadius: '100%',

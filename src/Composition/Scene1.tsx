@@ -30,6 +30,7 @@ const Scene1: React.FC<Scene1Props> = (props) => {
       }}
     >
       <Background {...props.background} />
+
       <div
         style={{
           display: 'flex',

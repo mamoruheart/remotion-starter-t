@@ -52,7 +52,7 @@ const leftPoints = (direction: string) => {
       res = { start: -200, end: 150 };
       break;
     case 'from-right':
-      res = { start: 0, end: -400 };
+      res = { start: 0, end: -240 };
       break;
     case 'center':
       res = { start: 0, end: 0 };
@@ -63,7 +63,7 @@ const leftPoints = (direction: string) => {
   return res;
 };
 
-const Logo = ({ logo, radius, direction = 'from-left' }: LogoProps) => {
+const Logo2 = ({ logo, radius, direction = 'from-left' }: LogoProps) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
@@ -133,4 +133,4 @@ const Logo = ({ logo, radius, direction = 'from-left' }: LogoProps) => {
   );
 };
 
-export default Logo;
+export default Logo2;
