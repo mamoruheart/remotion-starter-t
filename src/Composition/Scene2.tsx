@@ -1,4 +1,5 @@
-import { AbsoluteFill } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AnimatedText } from 'remotion-animate-text';
 import { z } from 'zod';
 
 import Image2 from '../components/Image2';
@@ -16,6 +17,19 @@ export const scene2Schema = z.object({
 type Scene2Props = z.infer<typeof scene2Schema> & { background: BackgroundProps };
 
 const Scene2: React.FC<Scene2Props> = (props) => {
+  const frame = useCurrentFrame();
+
+  const animation = {
+    delimiter: '',
+    opacity: [Math.random(), 1],
+    x: [1, 0],
+    y: [1, 0],
+    scale: [0, 1],
+    rotate: [Math.abs(90 - frame) % 45, 0],
+    durations: [50],
+    refRange: [0, props.title.length],
+  };
+
   return (
     <AbsoluteFill>
       <Background {...props.background} />
@@ -37,6 +51,7 @@ const Scene2: React.FC<Scene2Props> = (props) => {
         >
           <Logo2 logo={props.logo} radius={100} direction="from-right" />
         </div>
+
         <h2
           style={{
             color: 'white',
@@ -47,8 +62,11 @@ const Scene2: React.FC<Scene2Props> = (props) => {
             margin: 0,
           }}
         >
-          {props.title}
+          <AnimatedText duration={60} animation={animation}>
+            {props.title}
+          </AnimatedText>
         </h2>
+
         <Image2 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
       </div>
     </AbsoluteFill>
