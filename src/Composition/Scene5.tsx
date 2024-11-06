@@ -1,11 +1,11 @@
-import { AbsoluteFill, Sequence } from 'remotion';
+import { AbsoluteFill, useCurrentFrame } from 'remotion';
+import { AnimatedText } from 'remotion-animate-text';
 import { z } from 'zod';
 
+import Logo2 from '../components/Logo2';
 import Image5 from '../components/Image5';
-import Logo from '../components/Logo';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
-import { WIDTH } from '../lib/consts';
 import { colorVar } from '../lib/helpers';
 
 export const scene5Schema = z.object({
@@ -17,29 +17,59 @@ export const scene5Schema = z.object({
 type Scene5Props = z.infer<typeof scene5Schema> & { background: BackgroundProps };
 
 const Scene5: React.FC<Scene5Props> = (props) => {
+  const frame = useCurrentFrame();
+
+  const animation = {
+    delimiter: '',
+    opacity: [Math.random(), 1],
+    x: [1, 0],
+    y: [1, 0],
+    scale: [0, 1],
+    rotate: [Math.abs(90 - frame) % 45, 0],
+    durations: [50],
+    refRange: [0, props.title.length],
+  };
+
   return (
     <AbsoluteFill>
       <Background {...props.background} />
-      <Sequence from={-10}>
+
+      <div
+        style={{
+          display: 'flex',
+          margin: '100px',
+          paddingTop: '100px',
+          justifyContent: 'space-between',
+        }}
+      >
         <div
           style={{
-            display: 'flex',
-            margin: '100px',
-            paddingTop: '100px',
-            justifyContent: 'space-between',
-            width: WIDTH,
+            position: 'absolute',
+            top: '0rem',
+            right: '0rem',
           }}
         >
-          <div
-            style={{
-              position: 'relative',
-            }}
-          >
-            <Logo logo={props.logo} radius={180} direction="from-left" />
-          </div>
-          <Image5 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+          <Logo2 logo={props.logo} radius={100} direction="from-right" />
         </div>
-      </Sequence>
+
+        <Image5 img={props.img} radius={400} strokeColor={colorVar('amaRed')} strokeWidth={50} />
+
+        <h2
+          style={{
+            color: 'white',
+            fontSize: '6rem',
+            lineHeight: '6rem',
+            zIndex: 9,
+            width: '48%',
+            margin: 0,
+            textAlign: 'right',
+          }}
+        >
+          <AnimatedText duration={60} animation={animation}>
+            {props.title}
+          </AnimatedText>
+        </h2>
+      </div>
     </AbsoluteFill>
   );
 };
