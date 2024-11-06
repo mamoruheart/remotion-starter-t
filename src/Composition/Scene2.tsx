@@ -2,8 +2,8 @@ import { AbsoluteFill, useCurrentFrame } from 'remotion';
 import { AnimatedText } from 'remotion-animate-text';
 import { z } from 'zod';
 
-import Image2 from '../components/Image2';
 import Logo2 from '../components/Logo2';
+import Image2 from '../components/Image2';
 import { Background } from '../components/Background';
 import { BackgroundProps } from '../backgrounds';
 import { colorVar } from '../lib/helpers';
