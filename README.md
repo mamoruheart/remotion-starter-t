@@ -1,6 +1,10 @@
 # remotion-starter-t
 
-Remotion project - starter T
+[Remotion](https://www.remotion.dev/) project - starter T
+
+<img src="logo_ama.png" alt="AMA" width="150" height="auto" />
+
+> Make Videos Programmatically
 
 ## Prerequisites
 
